@@ -15,9 +15,25 @@
 		<build.encoding>UTF-8</build.encoding>
 		<slf4j-api.version>1.7.16</slf4j-api.version>
 		<logback.version>1.1.5</logback.version>
+		<nexus.releases.url>http://nexus:8081/repository/maven-releases/</nexus.releases.url>
+		<nexus.snapshots.url>http://nexus:8081/repository/maven-snapshots/</nexus.snapshots.url>
 	</properties>
 
-  	<dependencies>
+	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<name>Internal Releases</name>
+			<url>${nexus.releases.url}</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<name>Internal Snapshot Releases</name>
+			<url>${nexus.snapshots.url}</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+
+	<dependencies>
   	
   		<!-- *** Architecture Libraries *** -->
   	
